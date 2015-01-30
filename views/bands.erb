@@ -6,7 +6,7 @@
   <% if @bands.any? %>
     <% @bands.each do |band| %>
       <li>
-        <%= band.band_name %><a href="band/<%= band.id %>"> add venue</a>
+        <%= band.band_name %><a href="band/<%= band.id %>"> add venue</a> | <a href="band/<%= band.id %>/edit"> edit band</a>
       </li>
     <% end %>
   <% else %>

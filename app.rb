@@ -39,3 +39,21 @@ post '/band/:id' do
   band.update({ :venue_ids => [venue.id] })
   redirect "/band/#{band_id}"
 end
+
+get '/band/:id/edit' do
+  @band = Band.find(params.fetch('id').to_i)
+  erb :edit_band
+end
+
+delete '/band/:id/edit' do
+  band = Band.find(params.fetch('id'))
+  band.delete
+  redirect '/bands'
+end
+
+patch '/band/:id/edit' do
+  @band = Band.find(params.fetch('id'))
+  new_band_name = params.fetch('new_band_name')
+  @band.update({ band_name: new_band_name })
+  redirect '/bands'
+end
