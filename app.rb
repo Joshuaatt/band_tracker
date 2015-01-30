@@ -13,9 +13,19 @@ get '/bands/new' do
   erb :new_band
 end
 
+get '/bands' do
+  @bands = Band.all
+  erb :bands
+end
+
 post '/bands' do
   band_name = params.fetch("band_name")
   @band = Band.new(band_name: band_name)
   @band.save
-  erb :bands
+  redirect '/bands'
+end
+
+get '/band/:id' do
+    @band = Band.find(params.fetch('id'))
+    erb :band
 end

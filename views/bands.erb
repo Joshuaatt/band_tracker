@@ -1,0 +1,17 @@
+<h1>Band list</h1>
+
+<p>Here are all the bands:</p>
+
+<ul class="list-unstyled">
+  <% if @bands.any? %>
+    <% @bands.each do |band| %>
+      <li>
+        <%= band.band_name %><a href="band/<%= band.id %>"> add venue</a>
+      </li>
+    <% end %>
+  <% else %>
+    <p>There are no bands yet</p>
+  <% end %>
+</ul>
+
+<a class="btn" href="/bands/new">Add a band</a>
