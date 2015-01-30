@@ -1,3 +1,3 @@
-class Band < AvtiveRecord::Base
+class Band < ActiveRecord::Base
 
 end

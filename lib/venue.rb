@@ -1,3 +1,3 @@
-class Venue < AvtiveRecord::Base
+class Venue < ActiveRecord::Base
 
 end
