@@ -1,1 +1,19 @@
 <h2><%= @band.band_name %></h2>
+
+<form action="/band/<%= @band.id %>" method="post">
+  <input type="text" name="venue_name">
+  <button type="submit">Add venue</button>
+</form>
+
+
+<% if @venues.any? %>
+  <ul class="list-unstyled">
+    <% @venues.each do |venue| %>
+      <li>
+        <%= venue.venue_name %>
+      </li>
+    <% end %>
+  <% else %>
+    <p>You don't have and venues for this band yet</p>
+  </ul>
+<% end %>
