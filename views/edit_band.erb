@@ -4,10 +4,21 @@
   <input type="hidden" name="_method" value="delete">
   <button type="submit">Delete</button>
 </form>
-
+<hr>
 <form action="/band/<%= @band.id %>/edit" method="post">
   <input type="hidden" name="_method" value="patch">
   <input type="text" name="new_band_name">
   <button type="submit">Rename</button>
-
 </form>
+<hr>
+<h4>Venues</h4>
+
+<% if @venue.any? %>
+  <ul class="list-unstyled">
+    <% @venue.each do |venue| %>
+    <li>
+      <input type="checkbox" name="venue_ids[]" value="<%= venue.id %>"><%= venue.venue_name %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>

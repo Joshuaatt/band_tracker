@@ -42,6 +42,8 @@ end
 
 get '/band/:id/edit' do
   @band = Band.find(params.fetch('id').to_i)
+  @venue = Venue.all
+  
   erb :edit_band
 end
 
