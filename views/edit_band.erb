@@ -17,7 +17,7 @@
   <ul class="list-unstyled">
     <% @venue.each do |venue| %>
     <li>
-      <input type="checkbox" name="venue_ids[]" value="<%= venue.id %>"><%= venue.venue_name %>
+      <input type="checkbox" name="venue_ids[]" value="<%= venue.id %>"> <%= venue.venue_name %>
     </li>
     <% end %>
   </ul>
